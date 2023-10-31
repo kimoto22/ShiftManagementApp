@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  frontend:
+    build: .
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/usr/src/app
+      - react_node_modules:/app/node_modules
+      # nodeのモジュールだけ名前付きでマウントすることにより、モジュール部分の余分な読み書きを減らし、ホットリロードを高速化する
+    command: sh -c 'cd shift-app && yarn start'
+    ports:
+      - '3000:3000'
+    tty: true
+
+volumes:
+  react_node_modules:
+# react_node_modulesという名前のボリュームが定義されます
