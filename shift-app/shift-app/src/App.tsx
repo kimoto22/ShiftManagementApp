@@ -4,7 +4,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 //切り替え先のcomponentをimportする
-import { SampleA } from './components/sampleA'
+import { Login } from './components/login'
 import { SampleB } from './components/sampleB'
 import { SampleC } from './components/sampleC'
 import { SampleD } from './components/sampleD'
@@ -14,7 +14,7 @@ export const App = () => {
 		<>
 			<BrowserRouter>
 				<Routes>
-					<Route path="/samplea" element={<SampleA />} />
+					<Route path="/login" element={<Login />} />
 					<Route path="/sampleb" element={<SampleB />} />
 					<Route path="/samplec" element={<SampleC />} />
 					<Route path="/sampled" element={<SampleD />} />
